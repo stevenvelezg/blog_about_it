@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       session[:user_id] = nil
     end
   end
+
+  def verify_login
+    redirect_to '/' unless @current_user
+  end
 end

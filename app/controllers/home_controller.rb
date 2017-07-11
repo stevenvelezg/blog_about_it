@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :verify_login, except: [:index]
 
   def index
     if session[:user_id]
