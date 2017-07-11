@@ -111,9 +111,13 @@ table {
 }
 
 .block {
+  background-image: url("/assets/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   text-align: center;
   font-family: "Comic Sans";
   font-size: 35px;
+  padding-top: 40px;
   height: 80px;
   width: 85%;
   background-color: #949393;
