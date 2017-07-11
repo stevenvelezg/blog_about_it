@@ -10,9 +10,9 @@
   <%= @post.body %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Edit', edit_post_path(@post) if @current_user && @current_user.id == @post.user.id%> |
 <%= link_to 'Back', posts_path %> |
-<%= link_to "Add Comment", new_post_comment_path(post_id: @post.id) %>
+<%= link_to "Add Comment", new_post_comment_path(post_id: @post.id) %> |
 
 <table>
   <thead>
@@ -31,8 +31,6 @@
         <td><%= comment.user.full_name %></td>
         <td><%= comment.post.title %></td>
         <td><%= link_to 'Show', post_comment_path(@post,comment) %></td>
-        <td><%= link_to 'Edit', edit_post_comment_path(@post,comment) if @current_user && @current_user.id == @post.user.id %></td>
-        <td><%= link_to 'Destroy', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Are you sure?' } if @current_user && @current_user.id == @post.user.id %></td>
       </tr>
     <% end %>
   </tbody>
