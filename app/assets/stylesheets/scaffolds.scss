@@ -1,12 +1,16 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 20px auto;
+  margin: auto;
   padding: 0 10px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  width: 1000px;
+  width: 80%;
+  text-align: center;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 p, ol, ul, td {
@@ -83,4 +87,60 @@ div {
 
 label {
   display: block;
+}
+
+nav {
+  text-align: center;
+  margin: auto;
+  width: 85%;
+  height: 50px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: 25px;
+}
+
+nav a {
+  margin: 10%;
+}
+
+table {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+.block {
+  height: 80px;
+  width: 85%;
+  background-color: #949393;
+  margin: auto;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+}
+
+div.posts {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px double #949393;
+  width: 81%;
+}
+
+p.postTitle {
+  font-size: 30px;
+  font-family: "Rockwell Extra Bold";
+  margin: 5px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #949393;
+}
+
+p.postBody {
+  font-size: 20px;
+  font-family: "Perpetua";
+  margin: 5px;
+}
+
+form {
+  margin: 30px;
 }

@@ -1,10 +1,23 @@
 <h2>Welcome home!</h2>
 
 <%= flash[:notice] %>
-<% unless @current_user %>
+<% if @current_user %>
+  <% @posts.each do |post| %>
+    <div class="posts">
+      <p class="postTitle"><%= post.title %></p>
+      <br>
+      <p class="postBody"><%= post.body %></p>
+    </div>
+  <% end %>
+<% else %>
   <%= form_tag '/login' do %>
+    <label>Email</label>
     <%= text_field_tag :email %>
+    <br>
+    <br>
+    <label>Password</label>
     <%= password_field_tag :password %>
+    <br>
     <%= submit_tag 'Login' %>
   <% end %>
 <% end %>

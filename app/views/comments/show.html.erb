@@ -15,6 +15,6 @@
   <%= @comment.post.title %>
 </p>
 
-<%= link_to '| Edit |', edit_post_comment_path(@post,@comment) if @current_user && @current_user.id == @comment.user.id%>
-<%= link_to '| Destroy |', post_comment_path(@post,@comment), method: :delete, data: { confirm: 'Are you sure?' } if @current_user && @current_user.id == @comment.user.id%>
-<%= link_to '| Back |', post_comments_path(@post) %>
+<%= link_to 'Back', post_path(@post) %> |
+<%= link_to 'Edit', edit_post_comment_path(@post,@comment) if @current_user && @current_user.id == @comment.user.id%> |
+<%= link_to 'Delete Comment', post_comment_path(@post,@comment), method: :delete, data: { confirm: 'Are you sure?' } if @current_user && @current_user.id == @comment.user.id%> |

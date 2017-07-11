@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_action :verify_login, except: [:index]
 
   def index
+    @posts = Post.all
     if session[:user_id]
       @current_user = User.find(session[:user_id])
     else
