@@ -1,0 +1,12 @@
+<h1>Add a User</h1>
+<%= form_for @user, url: users_path do |f| %>
+  <label>Email: <%= f.text_field :email %></label>
+  <br>
+  <label>Password: <%= f.password_field :password %></label>
+  <br>
+  <label>First Name: <%= f.text_field :fname %></label>
+  <br>
+  <label>Last Name: <%= f.text_field :lname %></label>
+  <br>
+  <%= f.submit 'Create Account' %>
+<% end %>

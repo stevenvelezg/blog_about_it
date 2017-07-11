@@ -1,0 +1,10 @@
+<h2>Welcome home!</h2>
+
+<%= flash[:notice] %>
+<% unless @current_user %>
+  <%= form_tag '/login' do %>
+    <%= text_field_tag :email %>
+    <%= password_field_tag :password %>
+    <%= submit_tag 'Login' %>
+  <% end %>
+<% end %>
