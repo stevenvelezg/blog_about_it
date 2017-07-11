@@ -31,8 +31,8 @@
         <td><%= comment.user.full_name %></td>
         <td><%= comment.post.title %></td>
         <td><%= link_to 'Show', post_comment_path(@post,comment) %></td>
-        <td><%= link_to 'Edit', edit_post_comment_path(@post,comment) %></td>
-        <td><%= link_to 'Destroy', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_post_comment_path(@post,comment) if @current_user && @current_user.id == @post.user.id %></td>
+        <td><%= link_to 'Destroy', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Are you sure?' } if @current_user && @current_user.id == @post.user.id %></td>
       </tr>
     <% end %>
   </tbody>

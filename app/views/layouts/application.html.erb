@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsBlogPostgres</title>
+    <title>In Class Blog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,11 +9,15 @@
   </head>
 
   <body>
-    <div class="logout"><%= link_to('Logout', '/session', method: :delete) if @current_user %></div>
-    <%= link_to('Home', '/') %>
-    <%= link_to('Posts', '/posts') %>
-    <%= link_to('Profile', "/users/#{@current_user.id}/edit") if @current_user %>
-    <%= link_to('Sign Up', '/users/new') if @current_user == nil %>
-    <%= yield %>
+    <header>
+      <div class="logout"><%= link_to('Logout', '/session', method: :delete) if @current_user %></div>
+      <nav>
+        <%= link_to('Home', '/') %>
+        <%= link_to('Posts', '/posts') %>
+        <%= link_to('Profile', "/users/#{@current_user.id}/edit") if @current_user %>
+        <%= link_to('Sign Up', '/users/new') if @current_user == nil %>
+        <%= yield %>
+      </nav>
+    </header>
   </body>
 </html>
