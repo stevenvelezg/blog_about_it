@@ -17,12 +17,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    if User.update(user_params)
+    if @user.update(user_params)
       flash[:notice] = "Great Work!"
-      redirect_to users_path @user
+      redirect_to user_path @user
     else
       flash[:alert] = "There was an error updating"
-      redirect_to users_edit_path
+      redirect_to user_edit_path(@user)
     end
   end
 
