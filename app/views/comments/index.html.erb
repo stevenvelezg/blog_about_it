@@ -15,7 +15,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= @markdown.render(comment.body) %></td>
+        <td><%= @markdown.render(comment.body).html_safe %></td>
         <td><%= comment.user.full_name %></td>
         <td><%= comment.post.title %></td>
         <td><%= link_to 'Show', post_comment_path(@post,comment) %></td>

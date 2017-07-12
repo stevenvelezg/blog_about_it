@@ -2,7 +2,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @markdown.render(@comment.body) %>
+  <%= @markdown.render(@comment.body).html_safe %>
 </p>
 
 <p>
