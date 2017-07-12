@@ -6,7 +6,7 @@
     <div class="posts">
       <p class="postTitle"><%= post.title %></p>
       <br>
-      <p class="postBody"><%= post.body %></p>
+      <p class="postBody"><%= @markdown.render(post.body).html_safe %></p>
     </div>
   <% end %>
 <% else %>
@@ -21,3 +21,5 @@
     <%= submit_tag 'Login' %>
   <% end %>
 <% end %>
+
+<script src="https://widget.battleforthenet.com/widget.js" async></script>

@@ -1,8 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :current_user
+  before_action :markdown_renderer
+
+
 
   private
+
+  def markdown_renderer
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, superscript: true, underline: true, quote: true)
+  end
 
   def current_user
     begin

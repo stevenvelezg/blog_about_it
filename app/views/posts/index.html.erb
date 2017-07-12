@@ -19,7 +19,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.body %></td>
+        <td><%= @markdown.render(post.body).html_safe %></td>
         <td><%= post.user.full_name if post.user %></td>
         <td><%= link_to 'Show', post %></td>
       </tr>

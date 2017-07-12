@@ -7,7 +7,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @post.body %>
+  <%= @markdown.render(@post.body).html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) if @current_user && @current_user.id == @post.user.id%> |
@@ -29,7 +29,7 @@
   <tbody>
     <% @post.comments.each do |comment| %>
       <tr>
-        <td><%= comment.body %></td>
+        <td><%= @markdown.render(comment.body).html_safe %></td>
         <td><%= comment.user.full_name %></td>
         <td><%= comment.post.title %></td>
         <td><%= link_to 'Show', post_comment_path(@post,comment) %></td>
